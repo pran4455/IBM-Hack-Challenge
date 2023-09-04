@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Scape Dashboard</title>
+    <style>
+        /* Basic CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px; /* Increase the image size as needed */
+            margin-right: 10px;
+        }
+
+        .logout {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            background-color: #ff5733; /* Customize the color */
+            border-radius: 5px;
+        }
+
+        .logout:hover {
+            background-color: #ff3922; /* Customize the hover color */
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - 50px); /* Adjust the height as needed */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/vs.jpg' %}" alt="Visual Scape Icon">
+            <span style="font-size: 24px;">Visual Scape</span> <!-- Increase font size as needed -->
+        </div>
+        <a href="{% url 'login' %}" class="logout">Logout</a>
+    </header>
+
+    <iframe src="https://us1.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2FNew%2Bdashboard&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard&amp;subView=model0000018a2d81c123_00000000" width="700" height="600" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
+</body>
+</html>
